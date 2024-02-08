@@ -1,0 +1,385 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.navbar {
+    background-color: #333;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1;
+    height: 50px;
+}
+
+/* giving the height 100% respective to its parent It mean if the height of the parent is 100px then we give the 100% height of its child then it automatically taks its parent height */
+
+.h-100p {
+    height: 100%;
+}
+
+/* giving this 100vh height means use use vh unit in which element takes its height  the from the screen */
+.h-100 {
+    height: 100vh;
+}
+
+.navbar-image {
+    width: 70px;
+    height: 40px;
+    object-fit: cover;
+
+}
+
+/*  to centering the element in vertical direction */
+.flex-vc {
+    display: flex;
+    align-items: center;
+}
+
+/*  to centering the element in horizontal direction */
+.flex-hc {
+    display: flex;
+    justify-content: center;
+}
+
+ul li {
+    list-style: none;
+    padding: .5rem 1rem;
+    position: relative;
+}
+
+ul li a::after {
+    position: absolute;
+    content: "";
+    width: 0;
+    height: 0;
+    background: #C2D9FF;
+    left: 0;
+    color: black;
+    bottom: 0;
+    transition: all ease .3s;
+    z-index: -1;
+}
+
+ul li a:hover::after {
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+}
+
+ul li a {
+    text-decoration: none;
+    color: #fff;
+}
+
+.nav-tabs {
+    flex-grow: 1;
+    display: flex;
+    justify-content: end;
+    margin-right: 2rem;
+}
+
+.cursor-pointer {
+    cursor: pointer;
+    white-space: nowrap;
+}
+
+.position-relative {
+    position: relative;
+}
+
+.position-absolute {
+    position: absolute;
+    content: "";
+}
+
+.w-100 {
+    width: 100%;
+}
+
+.object-cover {
+    object-fit: cover;
+}
+
+.one {
+    /* background-color: lightcoral; */
+    /* margin-top: 60px; */
+}
+
+.two {
+    /* background-color: lightgreen; */
+    background-image: url('./images/animalImages/parallax.jpg');
+    background-attachment: fixed;
+
+}
+
+.three {
+    background-color: lightgrey;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.parallax {
+    height: 100%;
+    /* border: 1px solid; */
+    font-weight: bold;
+    color: white;
+}
+
+.text-center p {
+    font-size: 1.7rem !important;
+    /* margin: 0 8rem; */
+
+}
+
+.flex-c {
+    display: flex;
+    flex-direction: column;
+}
+
+.ourAnimals {
+    width: 250px;
+    height: 200px;
+}
+
+.flex-wrap {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.box-section {
+    margin-top: 1rem !important;
+    row-gap: 1rem;
+    column-gap: 1rem;
+    margin: 0 1rem;
+}
+
+.ourAnimal .text-center {
+    padding: 1rem 0;
+}
+
+.aboutSection {
+    margin-top: 50px;
+    background-image: url('data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBwgHBgkIBwgKCgkLDRYPDQwMDRsUFRAWIB0iIiAdHx8kKDQsJCYxJx8fLT0tMTU3Ojo6Iys/RD84QzQ5OjcBCgoKDQwNGg8PGjclHyU3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3N//AABEIALcAwwMBIgACEQEDEQH/xAAaAAADAQEBAQAAAAAAAAAAAAAAAQIDBAUH/8QAIxABAQEBAQEBAAEDBQAAAAAAAAERAhIhMUFRgeEiMlJhcv/EABkBAAMBAQEAAAAAAAAAAAAAAAABAgMEBv/EABkRAQEBAQEBAAAAAAAAAAAAAAABERICQf/aAAwDAQACEQMRAD8A+nyKXOTnLzfLh5ZYeNfJeT5HLLyeNPIwcjGXkY18iw+RjPBjTyXkcjEYJF+TnI5GM8LPrTyWDkYzpWNcKwcljGwsa0rEcpsZ2FF9cpvHXP1OJsRZ0m88/wA/rUef9X9k2FjDz/x/P5Lqf0aI7/3RGIsRoUEk9WQ5DhyO+R3JGKw1SGjBixIeDEYMaYWDCxnh4vBgwYiQYvBRgxGJ8tMLCwYjE2NLCsKxNjOwsaWFhYWM7CsaeSxNhYyvKcbYixFicY9T6it7GfXP1n6iPUZZyDs+hGIerIrExUd7uBgKBAwABgBgYWGYBYMPAMCcFPAAksVgKhFhWNCwsLGeFi/JWJwsZ0rF0r+IsKxlYizlr1+xPTOxnYywLwmeJx2xUKRTskdIMsNcAABmKRiAEYBAGQMGWHKACwlYQwJBkRBF/VoqaVT1Ers+M6zqKE59NNQVF/f8AghLsiomKjsjcCmDMgYAI4QAMgMAAAABkADgIwCLowAhNXUpqamosWms6moqOl1nWdZ0tIBml3auM9VK7I6YsFKatMaCABiwSgCAj0gdAh38IEAAAMGjAAZUABNKxVTU0qip1XX4i1nUF1GfVX10z6vxn6qLU6QJmzd0VERcdcdEPTT/ACalKEAAAAhmBRTwAgAABgAAkFAAIAqkj1NGlaVKoqOqrpHTP0is+qzq+mXVYeqyp+v+tCdCNRrvlVGcq5XXK6JV6eo09XKvVT9NOmo1QFDAB6QMx/IAAMJA0HRo0itIqQtTS0C/pWlam1FqNPpl0rqo7/GfqotZ9Vl006v/AKZVh6rH1SJN6+mhDvlaS/HPOmsrp810ytdCJTlaSr1cOVGn6PQvT1EpyqlVq9NA09Cy0pRpmZaC0qD0VOlpaQpaLUam1OnaztO1HVZ+qi0rUXoWs+qy9Vn6o6rKqvXxFZWsrdLQXkJS6uK056Yb9XO20raVvKqVjKcq56XPTbR6Z6NX0rWunOmXoejnoa3nR6w9HOz6Pptp6xtHs+j6baWs/Q0dH0u1N6Tei0r6FqtTam9IvSL6Rad6TanrpF6Z2s7T6rPqn10z6rO1n6pWl+fP6laV/EWs7RflIsBaWunVI3r+PwL1rrSdK9MZVSq0dN5fhemUp1XS+ml6GstPR0XTT0J0z0r0fQ1vOz9MZ0d6PpXTadDWHo9HQ6a+i9MvX0rSvodNL0i9o66Rek30i+mlqNTb8Si1Fp2/ST0W/EajTqaKNKp0AgBre2/zRKApr9KnKAZKnRygHFQ70nQFCi0QgRHo0AA9HoAAvQ9AECqaAQTpAJQXRUAUqkgEoowAAP/Z');
+    background-position: center;
+    background-size: cover;
+
+}
+
+.aboutSection p {
+    font-size: 1.7rem;
+}
+
+
+.footer {
+    height: 10vh;
+    background-color: lightblue;
+}
+
+.flex-e {
+    display: flex;
+    align-items: end;
+}
+
+.contact-section {
+    background-image: url('./images/animalImages/bg_image.jpg');
+}
+
+.points h3 {
+    color: #c66058;
+}
+
+.points ul li {
+    list-style: inside;
+}
+
+.ourAnimal {
+    margin-top: 3rem;
+}
+
+.future {
+    padding: 3rem;
+    color: black;
+
+}
+
+ul li {
+    color: black;
+}
+
+
+
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0;
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 1em;
+}
+
+
+
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f2f2f2;
+}
+
+header {
+    background-color: #339933;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+}
+
+
+
+.ticketsection {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+.container {
+    margin-top: 3rem;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    margin-bottom: 8px;
+}
+
+select,
+input {
+    margin-bottom: 16px;
+    padding: 8px;
+}
+
+button {
+    background-color: #4caf50;
+    color: #fff;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+
+.contact2section {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+}
+
+h1 {
+    margin: 0;
+}
+
+main {
+    max-width: 800px;
+    margin: 20px auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    margin-bottom: 8px;
+}
+
+input,
+textarea {
+    margin-bottom: 16px;
+    padding: 8px;
+}
+
+button {
+    background-color: #4caf50;
+    color: #fff;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+
+
+
+@media only screen and (max-width: 500px) {
+    .under500 {
+        width: 100%;
+    }
+
+    #animals {
+        overflow: scroll;
+    }
+
+    .future {
+        font-size: 1.1rem !important;
+        padding: 1.3rem !important;
+    }
+}
+
+
+.overFlow-scroll{
+    overflow: scroll;
+}
+
+.planetZoo{
+    position: absolute;
+    top: 15%;
+    color: black;
+    z-index: 1;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    font-size: 6rem;
+    -webkit-text-stroke: 3px red;
+
+}

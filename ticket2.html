@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="navbar">
+            <div class="flex-vc flex-sb h-100p overFlow-scroll">
+                <div class="nav-brand-image cursor-pointer flex-vc flex-hc">
+                    <img src="./images/logos/main-logo.png" alt="" class="navbar-image">
+                </div>
+                <div class="nav-tabs">
+                    <ul class="flex-vc">
+                        <li class="cursor-pointer">
+                            <a href="home.html">Home</a>
+                        </li>
+                        <li class="cursor-pointer">
+                            <a href="gallery.html">Gallery</a>
+                        </li>
+                        <li class="cursor-pointer">
+                            <a href="about.html">
+                                About us
+                            </a>
+                        </li>
+                        <li class="cursor-pointer">
+                            <a href="contact.html">
+                                Contact us
+                            </a>
+                        </li>
+                        <li class="cursor-pointer">
+                            <a href="ticket2.html" class="">
+                                ticket
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="ticketsection">
+            <div class="container">
+                <h1>Zoo Ticket Purchase</h1>
+                <form action="purchase.php" method="post">
+                    <label for="ticketType">Select Ticket Type:</label>
+                    <select id="ticketType" name="ticketType">
+                        <option value="adult">Adult</option>
+                        <option value="child">Child</option>
+                        <option value="senior">Senior</option>
+                    </select>
+
+                    <label for="quantity">Quantity:</label>
+                    <input type="number" id="quantity" name="quantity" min="1" value="1">
+
+                    <button type="submit">Purchase Tickets</button>
+                </form>
+            </div>
+           
+            </div>
+        </div><div class="footer">
+            <div class="footer-content flex-vc flex-hc flex-c h-100p">
+                <p>Designed by Anmol Singh</p>
+                <p>&copy; Copyright by Anmol Singh</p>
+
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
